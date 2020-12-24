@@ -28,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 k += 1;
-//                textView1.setText(""+ k);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView1.setText("" + k);
+                    }
+                });
             }
-        },1000, 5000);
+        },500, 1000);
 
     }
 }
