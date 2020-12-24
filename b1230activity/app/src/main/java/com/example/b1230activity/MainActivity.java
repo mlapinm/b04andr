@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickOK(View view) {
         String s = editText.getText().toString();
         Intent intent = new Intent(getApplicationContext(), WebActivity.class);
-        intent.putExtra("number", s);
+        intent.putExtra("number", "number : " + s);
         startActivity(intent);
-
     }
 }
