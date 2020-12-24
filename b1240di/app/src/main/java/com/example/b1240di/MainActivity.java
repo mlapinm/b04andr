@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.textView);
 
-        String id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        String id = Settings.Secure.getString(
+                getContentResolver(),
+                Settings.Secure.ANDROID_ID);
 
         textView.setText(id);
 
