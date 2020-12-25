@@ -38,6 +38,5 @@ public class MainActivity extends AppCompatActivity {
         sName = cursor.getString(cursor.getColumnIndex("Name"));
         db.close();
         textView1.setText(sName);
-
     }
 }
