@@ -23,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
         button = (Button)findViewById(R.id.button);
 
         mediaPlayer = MediaPlayer.create(context, R.raw.survive);
-
-
-
-
     }
 
     public void onClickPlay(View view) {

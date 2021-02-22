@@ -35,6 +35,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "SMS Fail", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
-
     }
 }

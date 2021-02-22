@@ -17,8 +17,15 @@ public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-            textView1.setText(String.valueOf(level) + " %");
+            int level = 0;
+            level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
+            int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+            boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                    status == BatteryManager.BATTERY_STATUS_FULL;
+            String s1 = "";
+            s1 += String.valueOf(level) + " %" + " ";
+            s1 += "isCharging : " + isCharging + "\n";
+            textView1.setText(s1);
         }
     };
 
