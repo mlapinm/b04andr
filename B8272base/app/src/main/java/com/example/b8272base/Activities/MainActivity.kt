@@ -1,4 +1,4 @@
-package com.example.b8262base.Activities
+package com.example.b8272base.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,9 +11,9 @@ import android.view.View
 import android.widget.ToggleButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.b8262base.*
-import com.example.b8262base.Adapters.ThoughtsAdapter
-import com.example.b8262base.Model.Thought
+import com.example.b8272base.*
+import com.example.b8272base.Adapters.ThoughtsAdapter
+import com.example.b8272base.Model.Thought
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
