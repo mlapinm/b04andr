@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.b8352base.*
@@ -79,6 +81,44 @@ class CommentsActivity : AppCompatActivity(), CommentOptionsClickListener {
 
     override fun optionsMenuClicked(comment: Comment) {
 //        this is where we present alert dialog.
+        val builder = AlertDialog.Builder(this)
+        val dialogView = layoutInflater.inflate(R.layout.options_menu, null)
+        val deleteButton = dialogView.findViewById<Button>(R.id.optionDeleteButton)
+        val editButton = dialogView.findViewById<Button>(R.id.optionEditButton)
+
+        builder.setView(dialogView)
+            .setNegativeButton("Cancel"){ _, _ -> }
+        val alertDialog = builder.show()
+
+        deleteButton.setOnClickListener {
+            // delete the comment
+            val commentRef = FirebaseFirestore.getInstance().collection(THOUGHTS_REF)
+                .document(thoughtDocumentId)
+                .collection(COMMENTS_REF)
+                .document(comment.documentId)
+            val thoughtRef = FirebaseFirestore.getInstance().collection(THOUGHTS_REF)
+                .document(thoughtDocumentId)
+
+            FirebaseFirestore.getInstance().runTransaction { transaction ->
+                val thought = transaction.get(thoughtRef)
+                val numComments = thought.getLong(NUM_COMMENTS)!! - 1
+                transaction.update(thoughtRef, NUM_COMMENTS, numComments)
+
+                transaction.delete(commentRef)
+            }
+                .addOnSuccessListener {
+                    alertDialog.dismiss()
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Exception", "Could not delete comment ${exception.localizedMessage}")
+                }
+
+        }
+
+        editButton.setOnClickListener {
+            // edit the comment
+
+        }
     }
 
     fun addCommentClicked(view: View) {
