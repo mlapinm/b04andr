@@ -1,4 +1,4 @@
-package com.example.b8362base.Activities
+package com.example.b8382base.Activities
 
 import android.content.Context
 import android.content.Intent
@@ -12,10 +12,10 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.b8362base.*
-import com.example.b8362base.Adapters.CommentsAdapter
-import com.example.b8362base.Interfaces.CommentOptionsClickListener
-import com.example.b8362base.Model.Comment
+import com.example.b8382base.*
+import com.example.b8382base.Adapters.CommentsAdapter
+import com.example.b8382base.Interfaces.CommentOptionsClickListener
+import com.example.b8382base.Model.Comment
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.b8362base">
+    package="com.example.b8382base">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.B8362base">
+        android:theme="@style/Theme.B8382base">
         <activity android:name=".Activities.UpdateCommentActivity"></activity>
         <activity android:name=".Activities.CommentsActivity" />
         <activity android:name=".Activities.LoginActivity" />
@@ -17,7 +17,7 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.B8362base.NoActionBar">
+            android:theme="@style/Theme.B8382base.NoActionBar">
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
