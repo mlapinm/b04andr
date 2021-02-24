@@ -1,6 +1,7 @@
 package com.example.b8362base.Activities
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -117,7 +118,12 @@ class CommentsActivity : AppCompatActivity(), CommentOptionsClickListener {
 
         editButton.setOnClickListener {
             // edit the comment
-
+            val updateIntent = Intent(this, UpdateCommentActivity::class.java)
+            updateIntent.putExtra(THOUGHT_DOC_ID_EXTRA, thoughtDocumentId)
+            updateIntent.putExtra(COMMENT_DOC_ID_EXTRA, comment.documentId)
+            updateIntent.putExtra(COMMENT_TEXT_EXTRA, comment.commentText)
+            alertDialog.dismiss()
+            startActivity(updateIntent)
         }
     }
 

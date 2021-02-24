@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.B8362base">
-        <activity android:name=".Activities.CommentsActivity"></activity>
+        <activity android:name=".Activities.UpdateCommentActivity"></activity>
+        <activity android:name=".Activities.CommentsActivity" />
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.CreateUserActivity" />
         <activity android:name=".Activities.AddThoughtActivity" />
-        <activity android:name=".Activities.MainActivity"
+        <activity
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.B8362base.NoActionBar">
             >
